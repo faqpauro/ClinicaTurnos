@@ -1,0 +1,76 @@
+﻿@model List<Turno>
+@{
+    ClinicaTurnosPNT1.ADO.ADO_Persona ado_persona = new ClinicaTurnosPNT1.ADO.ADO_Persona();
+    //LISTAR TURNOS
+}
+
+<div style="text-align:center">
+    <h1>Listado de Turnos</h1>
+</div>
+
+<div class="table-responsive" style="background-color:white; padding-left:2%; padding-bottom:2%; padding-top:2%; padding-right:2%; border-radius:20px"> 
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Paciente</th>
+      <th scope="col">Dni</th>
+      <th scope="col">Fecha y Hora</th>
+      <th scope="col">Activo</th>
+      <th scope="col">Prestacion</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in Model)
+        {
+            <tr>
+            <td>@ado_persona.Find(@item.PacienteId).Nombre @ado_persona.Find(item.PacienteId).Apellido</td>
+            <td>@ado_persona.Find(@item.PacienteId).Dni</td>
+            <td>@item.FechaHora</td>
+                @if(item.Activo == true)
+                    {
+                    <td>Si</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
+            <td>@item.Prestacion</td>
+            <td>
+                @if(item.Activo == true)
+                {
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-dark">DESACTIVAR</a>
+                }
+                else
+                {
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-dark">ACTIVAR</a>
+                }
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">BORRAR</a>
+            </td>
+            </tr>
+        }
+  </tbody>
+  </table>
+</div>
+
+<div class="row" style="margin-top:30px;">
+    <a asp-action="Index" asp-controller="Turnos" class="btn btn-success">Volver a Opciones de turnos</a>
+</div>
+
+<style>
+
+div.row { 
+
+    border: 1px solid;
+    border-bottom: 0px;
+}
+
+.container div.row:last-child {
+  border-bottom: 1px solid;
+}
+
+div.col {
+    border: 1px solid;
+}
+
+</style>

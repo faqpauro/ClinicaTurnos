@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Clínica Tecno";
+}
+
+@using(Html.BeginForm("Index", "Home", FormMethod.Post)){ //LOGIN
+
+   <div class="text-center">
+    <h1 class="display-4">Bienvenido a Clínica Tecno!</h1>
+    <p>Inicia sesión con tu usuario:</p>
+        <div class="row">
+            <form action="/Home/Index" method="post">
+                <div class="row">
+                    Email
+                    <input type="text" name="email" placeholder="Ingresa tu email" required/>
+                </div>
+                <div class="row">
+                    Password
+                    <input  type="password" name="password" placeholder="Ingresa tu password" required/>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-success" style="margin-top:15px;">Ingresar</button>
+                </div>
+            </form>
+
+            @if(ViewData["usuarioIncorrecto"].ToString() == "True")
+            {
+                <p style="color:red">Usuario o contraseña inválidos.</p>
+            }
+        
+        </div>
+    </div>
+
+}
+
+
+

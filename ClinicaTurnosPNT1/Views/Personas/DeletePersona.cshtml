@@ -1,0 +1,27 @@
+﻿<div style="text-align:center">
+    <h1>Eliminar Persona</h1>
+</div>
+
+@using(Html.BeginForm("DeletePersona", "Personas", FormMethod.Post)){ //POST - BORRAR PERSONA PASANDO EL DNI
+
+    <p style="text-align:center">Inserte el DNI de la persona que desea eliminar:</p>
+    <form action="/Personas/DeletePersona" method="post">
+      
+      <div class="row" style="text-align:center">
+          <input style="text-align:center" type="number" name="dni" placeholder="Ingresa el dni" required/>
+      </div>
+
+      <div class="container">
+          <div class="row" style="margin-top:30px;">
+              <div class="col-10">
+                  <button type="submit" style="width:100%;" class="btn btn-success">Eliminar persona</button>
+              </div>
+              <div class="col-2">
+                  <a asp-action="Index" asp-controller="Personas" style="width:100%;" class="btn btn-success">Volver atras</a>
+              </div>
+           </div>          
+      </div> 
+  
+  
+     </form>
+ }

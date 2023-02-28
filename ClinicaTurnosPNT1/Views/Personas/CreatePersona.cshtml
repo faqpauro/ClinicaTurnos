@@ -1,0 +1,71 @@
+﻿@model Persona
+
+<div style="text-align:center">
+    <h1>Crear Persona</h1>
+</div>
+
+@using(Html.BeginForm("CreatePersona", "Personas", FormMethod.Post)){ //POST - CREAR PERSONA
+
+    <form action="/Personas/CreatePersona" method="post" style="background-color:white; padding-left:2%; padding-bottom:2%; padding-top:2%; padding-right:2%; border-radius:20px">
+        <div class="row">
+            Nombre
+            <input type="text" name="nombre" placeholder="Ingresa tu nombre" required/>
+        </div>
+
+        <div class="row">
+            Apellido
+            <input type="text" name="apellido" placeholder="Ingresa tu apellido" required/>
+        </div>
+
+        <div class="row">
+            Dni
+            <input type="number" name="dni" placeholder="Ingresa tu dni" required/>
+        </div>
+
+        <div class="row">
+            Email
+            <input  type="email" name="email" placeholder="Ingresa tu email" required/>
+        </div>
+
+        <div class="row">
+            Password
+            <input  type="password" name="password" placeholder="Ingresa tu password" required/>
+        </div>
+
+        <div class="row">
+            Telefono
+            <input type="tel" name="telefono" placeholder="Ingresa tu telefono" required/>
+        </div>
+
+        <div class="row">
+            Direccion
+            <input  type="text" name="direccion" placeholder="Ingresa tu direccion" required/>
+        </div>
+
+        <div class="row" style="margin-top:20px; text-align:center; background-color:lightslategrey">
+            <div class="col-6">
+                <input type="radio" name="tipo" onclick="myPaciente()" value="Paciente" required>
+                <label for="Paciente"><b>Paciente</b></label>
+            </div>
+            <div class="col-6">
+                <input type="radio" name="tipo" onclick="myAdministrador()" value="Administrador" required>
+                <label for="Administrador"><b>Administrador</b></label>
+            </div>    
+        </div>
+
+      <div class="container">
+          <div class="row" style="margin-top:30px;">
+              <div class="col-10">
+                  <button type="submit" style="width:100%;" class="btn btn-success">Crear persona</button>
+              </div>
+              <div class="col-2">
+                  <a asp-action="Index" asp-controller="Personas" style="width:100%;" class="btn btn-success">Volver atras</a>
+              </div>
+           </div>          
+      </div>  
+  
+  
+     </form>
+ }
+
+

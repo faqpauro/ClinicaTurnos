@@ -1,0 +1,63 @@
+﻿@model List<Persona>
+
+<div style="text-align:center">
+    <h1>Listado de Personas</h1>
+</div>
+
+<div class="table-responsive" style="background-color:white; padding-left:2%; padding-bottom:2%; padding-top:2%; padding-right:2%; border-radius:20px"> 
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Dni</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Email</th>
+      <th scope="col">Tipo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in Model)
+        {
+            <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Apellido</td>
+            <td>@item.Dni</td>
+            <td>@item.Telefono</td>
+            <td>@item.Direccion</td>
+            <td>@item.Email</td>
+            <td>@item.tipo</td>
+            <td>
+                <a asp-action="EditPersona" asp-route-id="@item.Id" class="btn btn-outline-dark">EDITAR</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">BORRAR</a>
+            </td>
+            </tr>
+        }
+  </tbody>
+  </table>
+</div>
+
+<div class="row" style="margin-top:30px;">
+    <a asp-action="Index" asp-controller="Personas" class="btn btn-success">Volver a Opciones de personas</a>
+</div>
+
+<style>
+
+div.row { 
+
+    border: 1px solid;
+    border-bottom: 0px;
+}
+
+.container div.row:last-child {
+  border-bottom: 1px solid;
+}
+
+div.col {
+    border: 1px solid;
+}
+
+</style>
+

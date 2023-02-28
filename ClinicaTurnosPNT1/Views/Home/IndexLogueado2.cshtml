@@ -1,0 +1,21 @@
+﻿@model Persona
+@{
+    ViewData["Title"] = "Clínica Tecno";
+    //PANTALLA DE PACIENTES
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a Clínica Tecno!</h1>
+    <div class="row">
+        
+    </div>
+</div>
+
+<div class="text-center">
+    <h2>Elegí una opción:</h2>
+
+    <div class="row" style="margin-top:30px;">
+        <a href="@Url.Action("CreateTurno", "Turnos", new { id = @Model.Id })" class="btn btn-success" style="font-size:50px; margin-top:30px">Sacar un turno</a>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-success" style="font-size:50px; margin-top:30px; background-color:red">Cerrar sesión</a>
+    </div>  
+</div>

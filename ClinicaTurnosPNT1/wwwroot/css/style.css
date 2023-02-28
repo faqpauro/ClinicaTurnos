@@ -1,0 +1,13 @@
+﻿.botonSeleccion {
+    margin: 7px;
+    background-color: #a9a9a9dd;
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+    width: 110px;
+    text-align: center;
+    color: black;
+    height: 35px;
+    vertical-align: middle;
+    padding: 8px;
+    margin-top: 15px;
+}
