@@ -1,2 +1,2 @@
 # ClinicaTurnos
-Aplicación Web de Turnos Médicos
+Esta aplicación web permite a los pacientes solicitar turnos médicos de manera fácil y eficiente. Cuenta con tres roles de usuario: clientes, médicos y administrador. Los clientes pueden ver los médicos disponibles y seleccionar un horario conveniente para su turno. Los médicos pueden ver y administrar su agenda de turnos. Por último, el administrador tiene control total sobre la aplicación, pudiendo agregar, editar y eliminar médicos y turnos según sea necesario. Con esta aplicación, se facilita el proceso de solicitar y administrar turnos médicos, haciéndolo más eficiente y cómodo para todos los usuarios.
